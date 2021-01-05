@@ -1,0 +1,836 @@
+# Next JS
+
+
+## Installation
+
+npx 
+
+## Pages
+
+Elles reflètent l'arborescence des fichiers dans le dossier `pages`.
+Les noms de fichiers représentant également l'url.
+
+
+[source, JavaScript]
+.nouvellepage.js
+----
+// Peu importe le nom d'export de la fonction
+// C'est le nom du fichier qui prime.
+export default function FirstPost() {
+  return <h1>First Post</h1>
+}
+----
+
+
+### Créer des liens.
+
+On importe le component Link.
+Contrairement à React Router, on précise l'attribut `href`, et non `to`.
+
+[source, JavaScript]
+----
+import Link from 'next/link'
+
+return (
+  <Link href="/posts/first-post" />
+)
+----
+
+Si l'on a besoin de créer des liens externes, on reste sur la balise <a>.
+
+
+pas besoin de routage particulier dans Next.
+
+
+## Assets metadata and css
+
+
+### Assets 
+
+Le dossier public peut stocker les images et toute autre chose. Ce dossier est utile pour le fichier robots.txt apparemment.
+
+[source, JavaScript]
+----
+<img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+----
+
+### Metadata
+
+Dans le fichier index.js, il y a le component Head. 
+
+[source, JavaScript]
+----
+import Head from 'next/head module'
+----
+
+Reste plus qu'à lui mettre des titles et des balises meta entre ses balises
+
+Si l'on veut modifier la balise html, par exemple pour modifier l'attribut lang, on peut en créant un fichier `pages/_document.js`
+
+Il faut étendre la classe Document comme ci-dessous
+
+[source, JavaScript]
+----
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+
+----
+
+### CSS
+
+On voit comment utiliser CSS modules. Mettre du css classique dans un fichier, avec comme extension `module.css`.
+
+Puis dans les components, importer le fichier, et définir les classNames avec le nom d'import et la classe.
+
+[source, JavaScript]
+----
+import styles from './layout.module.css'
+
+export default function Layout({ children }) {
+  return <div className={styles.container}>{children}</div>
+}
+
+----
+
+#### Styles Globaux
+
+Si l'on veut appliquer des styles à l'ensemble du site, il faut déjà créer le fichier `/pages/_app.js`.
+
+Créer par exemple un dossier styles à la racine, avec un fichier `global.css` (peu importe le nom).
+
+Puis l'importer dans le fichier `_app.js`
+
+[source, JavaScript]
+----
+import '../styles/global.css'
+
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+----
+
+IMPORTANT: De base, NextJS compile le css avec PostCSS
+
+
+#### Tailwind
+
+Pour ajouter Tailwind, Next conseille ça
+
+[source, bash]
+----
+npm install tailwindcss postcss-preset-env postcss-flexbugs-fixes
+----
+
+[source, JavaScript]
+./postcss.config.js
+----
+module.exports = {
+  plugins: [
+    'tailwindcss',
+    'postcss-flexbugs-fixes',
+    [
+      'postcss-preset-env',
+      {
+        autoprefixer: {
+          flexbox: 'no-2009'
+        },
+        stage: 3,
+        features: {
+          'custom-properties': false
+        }
+      }
+    ]
+  ]
+}
+----
+
+Conf tailwind
+[source, JavaScript]
+./tailwind.config.js
+----
+module.exports = {
+  purge: [
+    // Use *.tsx if using TypeScript
+    './pages/**/*.js',
+    './components/**/*.js'
+  ]
+  // ...
+}
+----
+
+## Pre rendering and data fetching
+
+Par défaut, Next pré rend chaque page. ça signifie que Next génère l'html pour chaque page en avance, au lieu de le faire côté client en JavaScript.
+Chaque page est associée avec son minimum de code JS nécessaire pour que celle-ci soit entièrement interactive. Ce process est appelée `hydration`. 
+Nous avons donc l'HTML, instantané de la page de chargé lors d'une visite, puis les components React sont initialisés et l'app devient interactive 
+
+On a de meilleures perfs, et des gains en SEO.
+
+Si notre app est entièrement une app React, il n'y a pas de pre rendering. Ce ne sera qu'une page blanche.
+
+### Deux formes de pre rendering
+
+Next fait de la static generation et du server side rendering. La différence, c'est le moment où on génère la page.
+
+* La génération statique se fait au moment du build.
+* le server side rendering se fait à chaque requête.
+
+En mode développement, chaque page est prérendue à chaque requête.
+
+IMPORTANT: Next permet de choisir la méthode pour chaque page. La page A sera en static génération. La page B en server side rendering.
+
+### Quand utiliser la static generation et le server side rendering
+
+La recommandation est d'utiliser la static generation (avec et sans data) dans la mesure du possible, puisque chaque page page peut être construite qu'une fois, puis servie par CDN, ce qui la rend beaucoup plus rapide que d'être rendue à chaque requête.
+
+On peut utiliser la génération statique pour plusieurs types de pages :
+* Pages marketing
+* Posts de blog
+* Listing de produits e-commerce
+* Aide et documentation
+
+### Generation statique avec data
+
+On peut accéder au système de fichiers, requêter une api externe, ou interroger notre base de données au moment du build.
+
+#### Static Generation with Data using getStaticProps
+
+Quand on exporte un component page, on peut aussi exporter une fonction async appelée `getStaticProps`.
+Si on fait ça :
+* `getStaticProps` tourne au moment du build. Et...
+* à l'intérieur de la fonction, on peut requêter de la donnée, et l'envoyer comme props à la page.
+
+[source, JavaScript]
+----
+export default function Home(props) { ... }
+
+export async function getStaticProps() {
+  // Récupère des data du système de fichiers, API, DB, etc.
+  const data = ...
+
+  // La valeur des `props` sera passée
+  // au component `Home`
+  return {
+    props: ...
+  }
+}
+----
+
+La fonction `getStaticProps` permet essentiellement de dire à Next : 
+[quote, me]
+____
+"Hey, cette page a des dépendances de données. Alors, quand tu pré rends au build, sois sûr de résoudre ces dépendances en premier".
+____
+
+
+#### blog data
+
+On a deux fichiers .mdx. Ceux-ci présentent un frontmatter (exploitable avec gray-matter) 
+On va parser les données de blog pour mettre à jour notre fichier index.
+On voudrait, en implémentant `getStaticProps` :
+* parser les markdown et récupérer le title, la date, et l'id (nom du fichier)
+* Lister les données de l'index 
+
+On commence par installer gray-matter
+[source, bash]
+----
+npm install gray-matter
+----
+
+
+Puis, on va créer une simple librairie pour récupérer des données du système de fichiers
+
+[source, JavaScript]
+./lib/posts.js
+----
+export function getSortedPostsData() {
+  // récupère les noms de fichiers sous /posts
+  const fileNames = fs.readdirSync(postsDirectory)
+  const allPostsData = fileNames.map(fileName => {
+    // Supprime ".md" du nom du fichier pour récupérer l'id
+    const id = fileName.replace(/\.md$/, '')
+
+    // On lit le fichier markdown comme une chaine
+    const fullPath = path.join(postsDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+
+    // On utilise gray-matter pour parser la section des métadonnées du post
+    const matterResult = matter(fileContents)
+
+    // Assemble les données avec l'id
+    return {
+      id,
+      ...matterResult.data
+    }
+  })
+  // Classement par date
+  return allPostsData.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1
+    } else {
+      return -1
+    }
+  })
+}
+
+----
+
+Puis, on intègre le tout dans l'index
+
+[source, JavaScript]
+----
+import {getSortedPostsData} from '../lib/posts'
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
+----
+
+Ce qui permet d'afficher dans le component Home les titres
+
+[source, JavaScript]
+----
+export default function Home({allPostsData}) {
+  return (
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <section className={utilStyles.headingMd}>
+        <p>[Your Self Introduction]</p>
+        <p className="bg-blue-500 text-white m-2">
+          (This is a sample website - you’ll be building a site like this on{' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+        <Alert type="success">Bon, c'est fait !</Alert>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </Layout>
+  )
+}
+----
+
+
+#### Fetch external api or database
+
+
+NOTE: Fetch est polyfillé sur client et serveur dans Next.js.
+
+[source, JavaScript]
+----
+export async function getSortedPostsData() {
+  // Au lieu du système de fichiers,
+  // on peut fetcher des données d'une api externe
+  const res = await fetch('..')
+  return res.json()
+}
+
+----
+
+On pourrait aussi requêter une base de données directement.
+
+[source, JavaScript]
+----
+import someDatabaseSDK from 'someDatabaseSDK'
+
+const databaseClient = someDatabaseSDK.createClient(...)
+
+export async function getSortedPostsData() {
+  // Instead of the file system,
+  // fetch post data from a database
+  return databaseClient.query('SELECT posts...')
+}
+
+----
+
+C'est possible parce que `getStaticProps` tourne seulement côté serveur.
+
+`getStaticProps` peut seulement être exporté d'une page.
+
+
+#### Fetch data at request time
+
+Si on a besoin de récupérer de la donnée au moment de la requête de la page, c'est la méthode `getServerSideProps` qu'on va appeler, au lieu de `getStaticProps`.
+
+Bien sûr, le time to first byte sera beaucoup plus élevé, parce que le serveur doit calculer le résultat à chaque requête. Le résultat ne peut être mis en cache par un CDN sans une configuration supplémentaire.
+
+
+##### Client side rendering
+
+On peut aussi pré-rendre des parties d'une page, puis lorsque la page charge, on appele côté client, des ressources externes. 
+Cette approche fonctionne bien pour des dashboards par exemple. On se fiche du SEO pour cette partie, les données sont mises à jour fréquemment.
+
+#### SWR
+
+L'équipe derrière Next a créé un hook pour fetcher de la donnée appelé SWR. Il gère la mise en cache, la revalidation, la récupération par intervalle. Voir si React Query ne serait pas plus à même de répondre.
+
+Voici un exemple :
+
+[source, JavaScript]
+----
+import useSWR from 'swr'
+
+function Profile() {
+  const { data, error } = useSWR('/api/user', fetch)
+
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  return <div>hello {data.name}!</div>
+}
+----
+
+
+## Dynamic routes
+
+Dans une page, on fetche des données avec `getStaticProps`. 
+Ici, on veut signifier que d'un chemin, dépend des données.
+
+On veut que chaque post ait le chemin "/posts/<id>".
+On commence donc par créer une page appelée `[id].js` dans `/pages/posts`
+
+Les pages qui commencent par `[` et qui finissent par `]` sont des routes dynamiques dans Next.
+
+Maintenant, de cette page `[id].js`, on exporte une fonction asynchrone appelée `getStaticPaths`. Dans cette fonction, on a besoin de retourner une liste de valeurs possibles pour `id`.
+
+[source, JavaScript]
+./[id].js
+----
+import Layout from '../../components/layout'
+
+export default function Post() {
+  return <Layout>...</Layout>
+}
+
+export async function getStaticPaths() {
+  // Return a list of possible value for id
+}
+----
+
+Puis, on implémente `getStaticProps` également. Cette fois, pour fetcher des données pour le post de blog avec l'id donné. 
+
+params est donné à `getStaticProps`, et il contient `id`
+
+[source, JavaScript]
+----
+import Layout from '../../components/layout'
+
+export default function Post() {
+  return <Layout>...</Layout>
+}
+
+export async function getStaticPaths() {
+  // Retourne une liste de valeurs possibles pour id
+}
+
+export async function getStaticProps({ params }) {
+  // Fetch données nécessaires pour le post de blog en utilisant params.id
+}
+
+----
+
+
+Pour aller chercher les id, on doit avoir une structure qui doit être sous cette forme : un tableau d'objets. avec une prop params qui contient une prop id.
+
+
+[source, JavaScript]
+./lib/posts.js
+----
+
+// ____
+
+export function getAllPostIds() {
+  const fileNames = fs.readdirSync(postsDirectory)
+
+  // Returns an array that looks like this:
+  // [
+  //   {
+  //     params: {
+  //       id: 'ssg-ssr'
+  //     }
+  //   },
+  //   {
+  //     params: {
+  //       id: 'pre-rendering'
+  //     }
+  //   }
+  // ]
+  return fileNames.map(fileName => {
+    return {
+      params: {
+        id: fileName.replace(/\.md$/, '')
+      }
+    }
+  })
+}
+
+----
+
+
+On importe la fonction `getAllPostsIds` dans le fichier [id].js
+
+
+[source, JavaScript]
+----
+import { getAllPostIds } from '../../lib/posts'
+
+export async function getStaticPaths() {
+  const paths = getAllPostIds()
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+----
+
+Puis on crée dans lib.posts.js la fonction suivante
+
+[source, JavaScript]
+----
+export function getPostData(id) {
+  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+
+  // Use gray-matter to parse the post metadata section
+  const matterResult = matter(fileContents)
+
+  // Combine the data with the id
+  return {
+    id,
+    ...matterResult.data
+  }
+}
+
+----
+
+
+On mixe le tout
+
+
+[source, JavaScript]
+----
+import Layout from '../../components/layout'
+import { getAllPostIds, getPostData } from '../../lib/posts'
+
+
+export default function Post({postData}) {
+  return ( <Layout>
+    {postData.title}
+    <br />
+    {postData.id}
+    <br />
+    {postData.date}
+  </Layout>)
+}
+
+export async function getStaticPaths() {
+  const paths = getAllPostIds()
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export async function getStaticProps({ params }) {
+  const postData = getPostData(params.id)
+  return {
+    props: {
+      postData
+    }
+  }
+}
+
+----
+
+### Un peu de markdown
+
+pour rendre du markdown, il va falloir qu'on fasse venir des copains
+
+[source, JavaScript]
+----
+npm install remark remark-html
+----
+
+Puis on ajoute les imports dans lib/posts.js et on met à jour la fonction getPostData
+
+[source, JavaScript]
+----
+import remark from 'remark'
+import html from 'remark-html'
+
+export async function getPostData(id) {
+  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+
+  // Use gray-matter to parse the post metadata section
+  const matterResult = matter(fileContents)
+
+  // Use remark to convert markdown into HTML string
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content)
+  const contentHtml = processedContent.toString()
+
+  // Combine the data with the id and contentHtml
+  return {
+    id,
+    contentHtml,
+    ...matterResult.data // Tout ce qui reste du frontmatter est balancé
+  }
+}
+----
+
+Reste plus qu'à peaufiner. Ajouter un <Head> pour mettre un title
+
+[source, JavaScript]
+----
+import Head from 'next/head'
+
+
+export default function Post({postData}) {
+  return ( <Layout>
+  <Head><title>{postData.title}</title></Head>
+    {postData.title}
+    <br />
+    {postData.id}
+    <br />
+    {postData.date}
+    <br />
+
+    <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+    
+  </Layout>)
+}
+----
+
+Bien sûr, on peut aller chercher les sources en faisant appel à des données externes
+
+[source, JavaScript]
+----
+export async function getAllPostIds() {
+  // Instead of the file system,
+  // fetch post data from an external API endpoint
+  const res = await fetch('..')
+  const posts = await res.json()
+  return posts.map(post => {
+    return {
+      params: {
+        id: post.id
+      }
+    }
+  })
+}
+
+----
+
+NOTE: `getStaticPaths` ne tourne qu'au build en production
+
+### Fallback
+
+On a retourné `fallback: false` dans getStaticPaths. Qu'est ce que ça signifie ?
+
+=> Tous les chemins non retournés par getStaticPaths mèneront à une 404.
+
+
+Si `fallback: true`, ça va renvoyer en fallback le premier résultat généré pour ce slug.
+En gros, si on tape /posts/492 mais qu'il n'existe pas, ça va servir en fallback /posts/1
+
+Si fallback est à `blocking`, ça va être server-side renderé avec getStaticProps, et mis en cache pour les futures requêtes.
+
+
+Catch all routes, c'est pas un truc que j'ai vraiment pigé.
+On peut mettre des dots, et ça va accepter un peu ce qu'on veut dans l'url
+
+
+### 404
+
+On peut créer une 404 perso en ajoutant  `pages/404.js`
+
+Apparemment, une 500 aussi...
+
+https://nextjs.org/docs/advanced-features/custom-error-pagele fichier
+
+
+## Api routes
+
+On a la possibilité de créer un endpoint. On fait ça en créant une fonction dans `/pages/api`.
+
+// req = HTTP incoming message, res = HTTP server response
+export default function handler(req, res) {
+  // ...
+}
+
+Elles peuvent être déployées comme des fonctions serverless.
+
+### Créer un simple endpoint
+
+
+
+[source, JavaScript]
+./pages/api/hello.js
+----
+
+export default function handler(req, res) {
+  res.status(200).json({ text: 'Hello' })
+}
+
+----
+
+Si on accède à http://localhost:3000/api/hello, on va voir {"text":"Hello"}.
+
+
+## Deploiement
+
+Ce serait la commande pour démarrer un projet 
+
+[source, JavaScript]
+----
+git remote add origin https://github.com/<username>/nextjs-blog.git
+git push -u origin main
+----
+
+On inscrit ensuite le projet dans Vercel. Choix du dépôt.
+
+
+Pour changer le nom de domaine, https://vercel.com/docs/custom-domains
+
+Le principe du déploiement : 
+* On crée une branche. 
+* On pousse sur Github
+* On crée une pull request 
+
+ça crée une url de preview qu'on peut passer au client, avant de merger.
+
+
+
+
+## Images
+
+On importe le component Image
+
+[source, JavaScript]
+----
+import Image from 'next/image'
+
+<Img src="./car.png" width={500} height={400} alt />
+----
+
+Width et height renseignent la taille en pixels.
+
+
+
+Si on importe les images d'un domaine externe, il faut le renseigner dans le fichier `next.config.js`
+
+[source, JavaScript]
+----
+module.exports = {
+  images: {
+    domains: ['example.com'],
+  },
+}
+----
+
+
+## Sitemap
+
+https://medium.com/frontend-digest/how-to-build-a-dynamic-sitemap-for-your-next-js-app-c69836c91f8a
+
+
+[source, JavaScript]
+./utils/generateSiteMap.js
+----
+const fs = require('fs')
+const globby = require('globby')
+
+async function generateSiteMap() {
+  const pages = await globby([
+    'pages/**/*.js',
+    '!pages/_*.js', // On évince avec un bang !
+    '!pages/**/[id].js',
+    '!pages/api',
+    'posts/*.md'
+  ])
+
+  const sitemap = `
+      <?xml version="1.0" encoding="UTF-8"?>
+      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          ${pages
+            .map(page => {
+              const path = page
+                .replace('pages', '')
+                .replace('.js', '')
+                .replace('.md', '')
+              const route = path === '/index' ? '' : path
+
+              return `
+                      <url>
+                          <loc>${`https://next-learn-starter.now.sh/${route}`}</loc>
+                      </url>
+                  `
+            })
+            .join('')}
+      </urlset>
+  `
+
+  fs.writeFileSync('public/sitemap.xml', sitemap)
+}
+
+generateSiteMap()
+
+----
+
+
+Et dans le fichier next.config.js
+
+[source, JavaScript]
+----
+module.exports = {
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./utils/generateSiteMap')
+    }
+
+    return config
+  }
+}
+
+----

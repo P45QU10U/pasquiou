@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button {
+    @apply relative;
+  }
+
+  button::before {
+    @apply absolute inset-2;
+  }
+
+  ul li a {
+    @apply relative inline-block px-3 py-3 no-underline;
+  }
+
+  a {
+    @apply underline;
+  }
+
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-2xl mb-2;
+  }
+}
+
+@layer components {
+  .bulle {
+    @apply grid w-12 h-12 row-span-1 col-span-1 col-start-1 col-end-2 row-start-1
+      row-end-1 place-items-center;
+  }
+}
+
+@layer utilities {
+  .scroll-snap-none {
+    scroll-snap-type: none;
+  }
+  .scroll-snap-x {
+    scroll-snap-type: x;
+  }
+  .scroll-snap-y {
+    scroll-snap-type: y mandatory;
+  }
+
+  .scroll-snap-align-start {
+    scroll-snap-align: start;
+  }
+
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+
+  .filter-none {
+    filter: none;
+  }
+}
+
+.detourage {
+  /* from https://bennettfeely.com/clippy/ */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+input {
+  caret-color: blue;
+}
+
+.frostedglass {
+  position: relative;
+  background: hsla(0, 0%, 100%, 0.25) border-box;
+  overflow: hidden;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset,
+    0 0.5em 1em rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.3);
+}
+
+.frostedglass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -30px;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.carbon {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNiIgaGVpZ2h0PSI2Ij4KPHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2VlZSI+PC9yZWN0Pgo8ZyBpZD0iYyI+CjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjMiIGZpbGw9IiNlNmU2ZTYiPjwvcmVjdD4KPHJlY3QgeT0iMSIgd2lkdGg9IjMiIGhlaWdodD0iMiIgZmlsbD0iI2Q4ZDhkOCI+PC9yZWN0Pgo8L2c+Cjx1c2UgeGxpbms6aHJlZj0iI2MiIHg9IjMiIHk9IjMiPjwvdXNlPgo8L3N2Zz4=");
+  background-size: 6px 6px;
+}
