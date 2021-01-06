@@ -9,13 +9,13 @@ export default function Base() {
       <div className="bg-orange-200 bg-opacity-60 border-t-4 border-orange-300 rounded-sm p-8">
         <div className="flex gap-3 mb-4">
           <Bubble bgColor="bg-orange-500" textColor="text-white">
-            <FaHtml5 size="2rem" title="HTML5" />
+            <FaHtml5 size="32" title="HTML5" />
           </Bubble>
           <Bubble bgColor="bg-blue-500" textColor="text-white">
-            <FaCss3 size="2rem" title="CSS3" />
+            <FaCss3 size="32" title="CSS3" />
           </Bubble>
           <Bubble bgColor="bg-yellow-300" textColor="text-black">
-            <SiJavascript size="1.8rem" title="JavaScript" />
+            <SiJavascript size="28" title="JavaScript" />
           </Bubble>
         </div>
         <h4>Front</h4>

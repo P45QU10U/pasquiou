@@ -8,13 +8,13 @@ export default function Backend() {
       <div className="bg-green-200 bg-opacity-60 border-t-4 border-green-300 rounded-sm p-8">
         <div className="flex gap-3 mb-4">
           <Bubble bgColor="bg-blue-300" textColor="text-black">
-            <SiPhp size="2rem" title="PHP 7" />
+            <SiPhp size="32" title="PHP 7" />
           </Bubble>
           <Bubble bgColor="bg-white" textColor="text-black">
-            <SiMysql size="2rem" title="MySQL" />
+            <SiMysql size="32" title="MySQL" />
           </Bubble>
           <Bubble bgColor="bg-pink-400" textColor="text-black">
-            <SiGraphql size="2rem" title="GraphQL" />
+            <SiGraphql size="32" title="GraphQL" />
           </Bubble>
         </div>
         <h4>Back</h4>

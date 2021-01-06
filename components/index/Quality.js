@@ -9,8 +9,8 @@ export default function Quality() {
         <div>
           <h4>Qualité web</h4>
           <p>
-            Tout développeur web doit se sentir concerné par la qualité web. J'ai passé la certification Opquast,
-            Maîtrise de la qualité en projet Web, et{' '}
+            Tout développeur web se devrait de passer la certification Opquast, Maîtrise de la qualité en projet Web ;
+            Je l'ai passée et{' '}
             <a
               href="https://directory.opquast.com/fr/certificat/CFMXPT/"
               title="Certification Opquast Pasquiou Richard"

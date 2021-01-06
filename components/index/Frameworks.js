@@ -8,13 +8,13 @@ export default function Frameworks() {
       <div className="bg-red-200 bg-opacity-60 border-t-4 border-red-300 rounded-sm p-8">
         <div className=" flex gap-3 mb-4">
           <Bubble bgColor="bg-black" textColor="text-cyan-400">
-            <SiReact size="2rem" title="React" />
+            <SiReact size="32" title="React" />
           </Bubble>
           <Bubble bgColor="bg-white" textColor="text-red-400">
-            <SiGit size="2rem" title="Git" />
+            <SiGit size="32" title="Git" />
           </Bubble>
           <Bubble bgColor="bg-white" textColor="text-cyan-400">
-            <SiTailwindcss size="2rem" title="Tailwind CSS" />
+            <SiTailwindcss size="32" title="Tailwind CSS" />
           </Bubble>
         </div>
         <h4>Aides</h4>
