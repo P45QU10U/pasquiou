@@ -63,7 +63,7 @@ export default function Home({ allPostsData }) {
           </div>
         </Section>
 
-        <Section className="enveloppevintage h-96">
+        <Section className="enveloppevintage ">
           <blockquote>
             Je ne suis pas le mouton à 5 pattes, mais je pense à la transplantation. je suis investi, et m'efforce de
             délivrer un code concis. Pour moi, ou les suivants… Je suis ouvert à toute offre.

@@ -59,8 +59,8 @@ export default function ContactForm() {
     <div>
       <h4>Contactez-moi</h4>
 
-      <form onSubmit={handleOnSubmit} className="grid grid-cols-1 items-center justify-items-left">
-        <label htmlFor="email">
+      <form onSubmit={handleOnSubmit} className="grid grid-cols-1 grid-rows-3 gap-2 items-center w-2/4 mx-auto">
+        <label htmlFor="email" className="flex justify-between">
           Email (requis)
           <input
             className="ml-4 bg-gray-200"
@@ -72,7 +72,7 @@ export default function ContactForm() {
             value={inputs.email}
           />
         </label>
-        <label htmlFor="message">
+        <label htmlFor="message" className="flex justify-between">
           Message
           <textarea
             className="ml-4 bg-gray-200"
