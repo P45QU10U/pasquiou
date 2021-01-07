@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Skeleton, { appendSiteTitle } from '../components/skeleton'
 
-import { Container, Section } from '../components/designSystem/layout'
+import { Container, Section, Article } from '../components/designSystem/layout'
 
 export default function Apropos() {
   return (
@@ -10,6 +10,7 @@ export default function Apropos() {
         <title>{`&agrave; propos ${appendSiteTitle}`}</title>
       </Head>
       <Container className="min-h-screen bg-gradient-to-b from-transparent to-orange-200">
+        <Article />
         <Section className="">
           <h2 className="text-transparent bg-gradient-to-r bg-clip-text from-blue-500 to-green-500">A propos</h2>
 
