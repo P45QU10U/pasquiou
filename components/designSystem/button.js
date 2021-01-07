@@ -2,9 +2,9 @@ import Link from 'next/link'
 
 import { ButtonType, ButtonSize } from './theme'
 
-function Button({ size, type, children, onClick }) {
+function Button({ size, buttonType, children, onClick }) {
   // This can be improved. I’m keeping it simple here by joining two strings.
-  const classNames = `${ButtonType[type]} ${ButtonSize[size]}`
+  const classNames = `${ButtonType[buttonType]} ${ButtonSize[size]}`
 
   return (
     <button type="button" className={classNames} onClick={onClick}>

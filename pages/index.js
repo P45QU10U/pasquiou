@@ -11,7 +11,7 @@ import Base from '../components/index/Base'
 import Backend from '../components/index/Backend'
 import Quality from '../components/index/Quality'
 import Frameworks from '../components/index/Frameworks'
-import ContactForm from '../components/ContactForm'
+import ContactFormWhook from '../components/ContactFormWhook'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -56,19 +56,20 @@ export default function Home({ allPostsData }) {
                 Côté législation, j'ai décortiqué le{' '}
                 <abbr title="Réglement Général pour la Protection des Données">RGPD</abbr>.
               </p>
-              <p>Enfin, je suis très intéressé par tout ce qui est création de sites statiques. NextJS est génial.</p>
+              <p>Enfin, je suis très intéressé par tout ce qui est création de sites statiques ; NextJS est génial.</p>
               <p>Prochainement, je compte me former à TypeScript. Je n'en connais que les rudiments.</p>
               <code>// @ts-check</code>
+              <blockquote>
+                Je ne suis pas le mouton à 5 pattes, mais je pense à la transplantation. je suis investi, et m'efforce
+                de délivrer un code concis. Pour moi, ou les suivants…
+              </blockquote>
             </div>
           </div>
         </Section>
 
-        <Section className="enveloppevintage ">
-          <blockquote>
-            Je ne suis pas le mouton à 5 pattes, mais je pense à la transplantation. je suis investi, et m'efforce de
-            délivrer un code concis. Pour moi, ou les suivants… Je suis ouvert à toute offre.
-          </blockquote>
-          <ContactForm />
+        <Section>
+          <h3 className="mb-4">Contactez-moi</h3>
+          <ContactFormWhook />
         </Section>
       </Container>
     </Skeleton>
