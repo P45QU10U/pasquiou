@@ -12,6 +12,7 @@
     "@reach/skip-nav": "^0.12.1",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
+    "globby": "^11.0.2",
     "gray-matter": "^4.0.2",
     "next": "^10.0.4",
     "postcss-flexbugs-fixes": "^5.0.2",
