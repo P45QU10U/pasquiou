@@ -3,7 +3,7 @@ import Skeleton, { appendSiteTitle } from '../components/skeleton'
 
 import { Container, Section } from '../components/designSystem/layout'
 
-export default function Home() {
+export default function Apropos() {
   return (
     <Skeleton>
       <Head>
