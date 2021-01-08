@@ -14,7 +14,7 @@ export const secTextColorHover = 'text-white'
 export const maxWidthSections = ['max-w-sm', 'md:max-w-2xl', 'lg:max-w-4xl', 'mx-auto', 'w-xl', 'md:w-2xl']
 
 // Sizes
-export const sizes = {}
+// export const sizes = {}
 
 // Buttons
 export const buttonpurposes = {

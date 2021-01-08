@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import classnames from 'classnames'
 import Menu from './menu/menu'
 import { Container } from './designSystem/layout'

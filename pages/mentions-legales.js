@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Skeleton, { appendSiteTitle } from '../components/skeleton'
-import { Article } from '../components/designsystem/layout'
+import { Article } from '../components/designSystem/layout'
 
 export default function Mentionslegales() {
   return (
