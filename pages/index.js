@@ -3,7 +3,6 @@
 import Head from 'next/head'
 import Skeleton, { appendSiteTitle } from '../components/skeleton'
 
-import { getSortedPostsData } from '../lib/posts'
 import { Container, Section } from '../components/designSystem/layout'
 import Base from '../components/index/Base'
 import Backend from '../components/index/Backend'
@@ -12,16 +11,7 @@ import Quality from '../components/index/Quality'
 import Frameworks from '../components/index/Frameworks'
 import ContactFormWhook from '../components/ContactFormWhook'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData,
-    },
-  }
-}
-
-export default function Home({ allPostsData }) {
+export default function Home() {
   return (
     <Skeleton>
       <Head>
