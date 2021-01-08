@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Skeleton, { appendSiteTitle } from '../components/skeleton'
-import Article from '../components/Article'
+import { Article } from '../components/designSystem/layout'
 
 export default function Mentionslegales() {
   return (
@@ -22,7 +22,7 @@ export default function Mentionslegales() {
           Vercel Inc. <br />
           340 S Lemon Ave #4133 Walnut, <br />
           CA 91789, <br />
-          états-unis
+          États-unis
         </address>
       </Article>
     </Skeleton>

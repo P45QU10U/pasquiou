@@ -1,21 +1,20 @@
 import Link from 'next/link'
 
-import { ButtonType, ButtonSize } from './theme'
+import { buttonpurposes, buttonsizes } from './theme'
 
-function Button({ size, buttonType, children, onClick }) {
-  // This can be improved. I’m keeping it simple here by joining two strings.
-  const classNames = `${ButtonType[buttonType]} ${ButtonSize[size]}`
+function Button({ size, type, purpose, children, onClick }) {
+  const classNames = `${buttonpurposes[purpose]} ${buttonsizes[size]}`
 
   return (
-    <button type="button" className={classNames} onClick={onClick}>
+    // eslint-disable-next-line react/button-has-type
+    <button type={type} className={classNames} onClick={onClick}>
       {children}
     </button>
   )
 }
 
 function LinkButton({ size, type, children }) {
-  // This can be improved. I’m keeping it simple here by joining two strings.
-  const classNames = `${ButtonType[type]} ${ButtonSize[size]}`
+  const classNames = `${buttonpurposes[type]} ${buttonsizes[size]}`
 
   return <Link className={classNames}>{children}</Link>
 }

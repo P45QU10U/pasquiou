@@ -29,7 +29,7 @@ export default function Menu() {
 
   return (
     <nav className="w-full">
-      <div className="grid grid-cols-6 grid-rows-1  p-4 mb-4">
+      <div className="grid grid-cols-6 grid-rows-1 p-4">
         <h1 className="flex col-span-5 md:col-span-1 text-left text-4xl">
           <Link href="/">R.P.</Link>
         </h1>
@@ -44,7 +44,7 @@ export default function Menu() {
         </button>
         <ul
           id="menu"
-          className={`${displayedMenu} col-start-2 text-center col-span-4 md:col-span-5 md:flex md:flex-wrap md:flex-row md:justify-end md:items-end md:mr-4 `}
+          className={`${displayedMenu} mt-4 col-start-2 text-center col-span-4 md:col-span-5 md:flex md:flex-wrap md:flex-row md:justify-end md:items-end md:mr-4 `}
         >
           {menu.map((entr, index) => (
             <MenuLi key={`menu-${index}`}>

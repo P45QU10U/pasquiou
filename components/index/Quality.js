@@ -9,15 +9,15 @@ export default function Quality() {
         <div>
           <h4>Qualité web</h4>
           <p>
-            Tout développeur web se devrait de passer la certification Opquast, Maîtrise de la qualité en projet Web ;
-            Je l'ai passée et{' '}
+            Tout développeur web devrait se pencher sur la certification Opquast, Maîtrise de la qualité en projet Web ;
+            En juillet 2020,{' '}
             <a
               href="https://directory.opquast.com/fr/certificat/CFMXPT/"
               title="Certification Opquast Pasquiou Richard"
             >
               j'ai obtenu le niveau avancé
-            </a>{' '}
-            en juillet 2020. Si vous ne l'avez pas encore passée, allez-y… Vraiment.
+            </a>
+            . Si vous ne l'avez pas encore passée, allez-y… Vraiment.
           </p>
         </div>
         <Img width="200" height="200" alt="badge Opquast avancé" src="/images/OpquastBadge.svg" />
