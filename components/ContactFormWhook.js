@@ -1,5 +1,5 @@
 import { useForm, ValidationError } from '@formspree/react'
-import { Button } from './designSystem/Button'
+import { Button } from './designSystem/Buttons'
 
 function ContactFormWhook() {
   const [state, handleSubmit] = useForm('moqpyjwv', {
