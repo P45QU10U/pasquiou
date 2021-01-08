@@ -1,5 +1,5 @@
 import { useForm, ValidationError } from '@formspree/react'
-import { Button } from './designSystem/button'
+import { Button } from './designSystem/Button'
 
 function ContactFormWhook() {
   const [state, handleSubmit] = useForm('moqpyjwv', {
@@ -38,7 +38,7 @@ function ContactFormWhook() {
         <textarea id="message" name="message" className="bg-gray-200 mt-2 focus:ring-2 focus:ring-blue-400" />
       </label>
       <ValidationError prefix="Message" field="message" errors={state.errors} />
-      <Button size="lg" buttonType="primary" type="submit" disabled={state.submitting}>
+      <Button type="submit" purpose="primary" size="lg" disabled={state.submitting}>
         Envoyer
       </Button>
     </form>

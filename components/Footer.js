@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import { SiTwitter, SiLinkedin } from 'react-icons/si'
+import { SiTwitter } from 'react-icons/si'
 import { Container, Section } from './designSystem/layout'
 import { menu } from './menu/menu'
 
 export default function Footer() {
   return (
     <Container className="bg-gray-50 bg-opacity-80">
-      <Section className="grid grid-cols-1 grid-rows-3 md:grid-cols-3 p-4">
+      <Section className="grid grid-cols-1 grid-rows-2 md:grid-cols-3 p-4">
         <div className="mb-4">
           <h4>Coordonnées</h4>
           <p>
@@ -26,6 +26,9 @@ export default function Footer() {
                 <Link href={entr.slug}>{entr.title}</Link>
               </li>
             ))}
+            <li>
+              <Link href="/mentions-legales">Mentions légales</Link>
+            </li>
           </ul>
         </div>
         <div>

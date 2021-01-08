@@ -1,2 +1,3 @@
 # pasquiou
-site perso
+
+site perso basé sur NextJS et TailwindCSS
