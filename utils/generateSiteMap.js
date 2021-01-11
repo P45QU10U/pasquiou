@@ -20,7 +20,7 @@ async function generateSiteMap() {
         const route = path === '/index' ? '' : path
 
         return `<url>
-          <loc>${`https://${domain}/${route}`}</loc>
+          <loc>${`https://${domain}${route}`}</loc>
         </url>`
       })
       .join('')}
