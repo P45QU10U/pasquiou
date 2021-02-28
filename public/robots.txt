@@ -1,9 +1,4 @@
-# Group 1
-User-agent: Googlebot
-Disallow: /nogooglebot/
+User-Agent: *
+Disallow: 
 
-# Group 2
-User-agent: *
-Allow: /
-
-Sitemap: https://www.pasquiou.fr/sitemap.xml
+Sitemap: https://pasquiou.fr/sitemap.xml
