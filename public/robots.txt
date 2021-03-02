@@ -1,4 +1,4 @@
-User-Agent: *
-Disallow: 
+User-agent: *
+Allow: /
 
 Sitemap: https://pasquiou.fr/sitemap.xml
