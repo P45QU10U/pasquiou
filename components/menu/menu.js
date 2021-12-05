@@ -28,7 +28,7 @@ const Menu = function () {
   }
 
   return (
-    <nav className="w-full">
+    <div className="w-full">
       <div className="grid grid-cols-6 grid-rows-1 p-4">
         <h1 className="flex col-span-5 md:col-span-1 text-left text-4xl">
           <Link href="/">R.P.</Link>
@@ -42,18 +42,20 @@ const Menu = function () {
         >
           <SvgMenuIcon />
         </button>
-        <ul
-          id="menu"
-          className={`${displayedMenu} mt-4 col-start-2 text-center col-span-4 md:col-span-5 md:flex md:flex-wrap md:flex-row md:justify-end md:items-end md:mr-4 `}
-        >
-          {menuItems.map((entr, index) => (
-            <MenuLi key={`menu-${index}`}>
-              <Link href={entr.slug}>{entr.title}</Link>
-            </MenuLi>
-          ))}
-        </ul>
+        <nav className="col-span-6 md:col-span-2 md:col-end-7">
+          <ul
+            id="menu"
+            className={`${displayedMenu} mt-4 col-start-2 text-center col-span-4 md:col-span-5 md:flex md:flex-wrap md:flex-row md:justify-end md:items-end md:mr-4 `}
+          >
+            {menuItems.map((entr, index) => (
+              <MenuLi key={`menu-${index}`}>
+                <Link href={entr.slug}>{entr.title}</Link>
+              </MenuLi>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </nav>
+    </div>
   )
 }
 

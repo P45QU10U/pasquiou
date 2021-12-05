@@ -5,7 +5,7 @@ import { menuItems } from './menu/menu'
 
 const Footer = function () {
   return (
-    <footer>
+    <footer role="contentinfo">
       <Container className="bg-gray-50 bg-opacity-80">
         <Section className="grid grid-cols-1 grid-rows-2 md:grid-cols-3 p-4">
           <div className="mb-4">
@@ -34,7 +34,6 @@ const Footer = function () {
           </div>
           <div>
             <h4>Suivez-moi</h4>
-
             <ul>
               <li>
                 <a href="https://twitter.com/P45QU10U" className="flex">

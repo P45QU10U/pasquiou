@@ -7,7 +7,7 @@ import { maxWidthSections } from './designSystem/theme'
 const Header = function () {
   return (
     <Container className="shadow-md mb-4">
-      <header className={classnames(maxWidthSections, `flex align-items justify-between`)}>
+      <header role="banner" className={classnames(maxWidthSections, `flex align-items justify-between`)}>
         <Menu />
       </header>
     </Container>
