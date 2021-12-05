@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { client } from '../utils/client'
 
-export default function ContactForm() {
+export const ContactForm = function () {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,

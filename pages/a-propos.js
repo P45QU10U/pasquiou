@@ -3,7 +3,7 @@ import Skeleton, { appendSiteTitle } from '../components/skeleton'
 
 import { Container, Section, Article } from '../components/designSystem/layout'
 
-export default function Apropos() {
+const Apropos = function () {
   return (
     <Skeleton>
       <Head>
@@ -32,3 +32,5 @@ export default function Apropos() {
     </Skeleton>
   )
 }
+
+export default Apropos

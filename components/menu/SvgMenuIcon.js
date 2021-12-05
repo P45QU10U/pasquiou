@@ -1,4 +1,4 @@
-export default function SvgMenuIcon() {
+const SvgMenuIcon = function () {
   return (
     <svg
       className="h-8 w-8 stroke-current"
@@ -15,3 +15,5 @@ export default function SvgMenuIcon() {
     </svg>
   )
 }
+
+export default SvgMenuIcon

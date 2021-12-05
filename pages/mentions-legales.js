@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Skeleton, { appendSiteTitle } from '../components/skeleton'
 import { Article } from '../components/designSystem/layout'
 
-export default function Mentionslegales() {
+const Mentionslegales = function () {
   return (
     <Skeleton>
       <Head>
@@ -28,3 +28,5 @@ export default function Mentionslegales() {
     </Skeleton>
   )
 }
+
+export default Mentionslegales

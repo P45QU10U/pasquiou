@@ -2,7 +2,7 @@ import { SiReact, SiGit, SiTailwindcss } from 'react-icons/si'
 import Bubble from '../designSystem/Bubble'
 import { Section } from '../designSystem/layout'
 
-export default function Frameworks() {
+const Frameworks = function () {
   return (
     <Section>
       <div className="bg-red-200 bg-opacity-60 border-t-4 border-red-300 rounded-sm p-8">
@@ -26,3 +26,5 @@ export default function Frameworks() {
     </Section>
   )
 }
+
+export default Frameworks

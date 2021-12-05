@@ -1,7 +1,7 @@
 import { useForm, ValidationError } from '@formspree/react'
 import { Button } from './designSystem/Buttons'
 
-function ContactFormWhook() {
+const ContactFormWhook = function () {
   const [state, handleSubmit] = useForm('moqpyjwv', {
     data: {
       _subject: 'Vous avez un message',

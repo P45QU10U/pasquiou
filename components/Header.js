@@ -4,7 +4,7 @@ import Menu from './menu/menu'
 import { Container } from './designSystem/layout'
 import { maxWidthSections } from './designSystem/theme'
 
-export default function Header() {
+const Header = function () {
   return (
     <Container className="shadow-md mb-4">
       <header className={classnames(maxWidthSections, `flex align-items justify-between`)}>
@@ -13,3 +13,5 @@ export default function Header() {
     </Container>
   )
 }
+
+export default Header

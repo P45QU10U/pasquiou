@@ -3,7 +3,7 @@ import Link from 'next/link'
 import MenuLi from './MenuLi'
 import SvgMenuIcon from './SvgMenuIcon'
 
-export const menu = [
+export const menuItems = [
   {
     title: 'Accueil',
     slug: '/',
@@ -18,7 +18,7 @@ export const menu = [
   },
 ]
 
-export default function Menu() {
+const Menu = function () {
   const [toggle, setToggle] = React.useState(false)
   const displayedMenu = !toggle ? 'hidden ' : ''
 
@@ -46,7 +46,7 @@ export default function Menu() {
           id="menu"
           className={`${displayedMenu} mt-4 col-start-2 text-center col-span-4 md:col-span-5 md:flex md:flex-wrap md:flex-row md:justify-end md:items-end md:mr-4 `}
         >
-          {menu.map((entr, index) => (
+          {menuItems.map((entr, index) => (
             <MenuLi key={`menu-${index}`}>
               <Link href={entr.slug}>{entr.title}</Link>
             </MenuLi>
@@ -56,3 +56,5 @@ export default function Menu() {
     </nav>
   )
 }
+
+export default Menu

@@ -2,7 +2,7 @@ import Img from 'next/image'
 
 import { Section } from '../designSystem/layout'
 
-export default function Quality() {
+const Quality = function () {
   return (
     <Section>
       <div className="grid grid-cols-1 gap-2 md:grid-cols-2 place-items-center bg-indigo-300 bg-opacity-60  border-t-4 border-indigo-400 rounded-sm p-8">
@@ -25,3 +25,5 @@ export default function Quality() {
     </Section>
   )
 }
+
+export default Quality

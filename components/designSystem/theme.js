@@ -1,8 +1,8 @@
 // Typography
 
 // backgroundColors
-export const mainBgColor = 'bg-indigo-500'
-export const mainBgColorHover = 'bg-indigo-600'
+export const mainBgColor = 'bg-indigo-600'
+export const mainBgColorHover = 'bg-indigo-700'
 export const mainTextColor = 'text-white'
 export const mainTextColorHover = 'text-white'
 

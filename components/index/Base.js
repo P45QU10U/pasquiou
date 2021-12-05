@@ -3,7 +3,7 @@ import { SiJavascript } from 'react-icons/si'
 import Bubble from '../designSystem/Bubble'
 import { Section } from '../designSystem/layout'
 
-export default function Base() {
+const Base = function () {
   return (
     <Section>
       <div className="bg-orange-200 bg-opacity-60 border-t-4 border-orange-300 rounded-sm p-8">
@@ -27,3 +27,5 @@ export default function Base() {
     </Section>
   )
 }
+
+export default Base

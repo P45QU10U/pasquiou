@@ -11,7 +11,7 @@ import Quality from '../components/index/Quality'
 import Frameworks from '../components/index/Frameworks'
 import ContactFormWhook from '../components/ContactFormWhook'
 
-export default function Home() {
+const Home = function () {
   return (
     <Skeleton>
       <Head>
@@ -45,3 +45,5 @@ export default function Home() {
     </Skeleton>
   )
 }
+
+export default Home

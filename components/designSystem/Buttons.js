@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { buttonpurposes, buttonsizes } from './theme'
 
-function Button({ size, type, purpose, children, onClick }) {
+const Button = function ({ size, type, purpose, children, onClick }) {
   const classNames = `${buttonpurposes[purpose]} ${buttonsizes[size]}`
 
   return (
@@ -13,7 +13,7 @@ function Button({ size, type, purpose, children, onClick }) {
   )
 }
 
-function LinkButton({ size, type, children }) {
+const LinkButton = function ({ size, type, children }) {
   const classNames = `${buttonpurposes[type]} ${buttonsizes[size]}`
 
   return <Link className={classNames}>{children}</Link>

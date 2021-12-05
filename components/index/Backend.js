@@ -2,7 +2,7 @@ import { SiPhp, SiMysql, SiGraphql } from 'react-icons/si'
 import Bubble from '../designSystem/Bubble'
 import { Section } from '../designSystem/layout'
 
-export default function Backend() {
+const Backend = function () {
   return (
     <Section>
       <div className="bg-green-200 bg-opacity-60 border-t-4 border-green-300 rounded-sm p-8">
@@ -28,3 +28,5 @@ export default function Backend() {
     </Section>
   )
 }
+
+export default Backend

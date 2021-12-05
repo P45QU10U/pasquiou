@@ -8,7 +8,7 @@ import Footer from './Footer'
 
 export const appendSiteTitle = ' - Richard Pasquiou'
 
-export default function Skeleton({ children }) {
+const Skeleton = function ({ children }) {
   return (
     <>
       <SkipNavLink>passer au contenu</SkipNavLink>
@@ -19,10 +19,12 @@ export default function Skeleton({ children }) {
         </Head>
         <Header />
         <SkipNavContent style={{ scrollMarginTop: '12rem' }}>
-          <main>{children}</main>
+          <main role="main">{children}</main>
         </SkipNavContent>
         <Footer />
       </div>
     </>
   )
 }
+
+export default Skeleton

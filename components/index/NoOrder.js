@@ -1,6 +1,6 @@
 import { Section } from '../designSystem/layout'
 
-export default function Frameworks() {
+const Frameworks = function () {
   return (
     <Section className="relative z-10 grid grid-cols-1">
       <div className="w-full -ml-full rounded-3xl shadow-lg bg-gradient-to-br from-orange-400 to-pink-500 transform -rotate-1 sm:-rotate-2 mb-4">
@@ -13,7 +13,7 @@ export default function Frameworks() {
           </p>
           <p>Enfin, je suis très intéressé par tout ce qui est création de sites statiques ; NextJS est génial.</p>
           <p>Prochainement, je compte me former à TypeScript. Je n'en connais que les rudiments.</p>
-          <code>// @ts-check</code>
+          <code>\// @ts-check</code>
           <blockquote>
             Je ne suis pas le mouton à 5 pattes. Je suis investi, et m'efforce de délivrer un code concis. Pour moi, ou
             les suivants…
@@ -23,3 +23,5 @@ export default function Frameworks() {
     </Section>
   )
 }
+
+export default Frameworks
