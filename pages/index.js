@@ -19,7 +19,7 @@ const Home = function () {
       </Head>
       <Container>
         <Section className="grid grid-cols-1 gap-2 grid-rows-3 grid-flow-col">
-          <h2 className="text-transparent bg-gradient-to-r bg-clip-text from-orange-500 to-green-500">
+          <h2 className="text-transparent bg-gradient-to-br bg-clip-text from-black to-orange-500">
             Développeur web <span className="inline-block">front-end</span>
           </h2>
           <h3>
@@ -28,7 +28,7 @@ const Home = function () {
             </span>{' '}
             Je m'appelle Richard Pasquiou
           </h3>
-          <p>développeur web front-end depuis 2010</p>
+          <p>développeur web depuis 2010</p>
         </Section>
 
         <Base />

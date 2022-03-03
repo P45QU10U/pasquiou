@@ -20,7 +20,7 @@ const Apropos = function () {
             </p>
             <p>
               J'aime aussi apprendre à faire pousser des choses dans mon jardin. Les conseils de{' '}
-              <a href="josephchauffrey.fr">Joseph Chauffrey</a> pour l'entretenir sont précieux.
+              <a href="https://josephchauffrey.fr">Joseph Chauffrey</a> pour l'entretenir sont précieux.
             </p>
             <p>
               Et pour partager quelques moments en famille, je m'adonne aux jeux de société, tels que Takenoko,
