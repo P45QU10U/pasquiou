@@ -1,14 +1,10 @@
-import Head from 'next/head'
-import Skeleton, { appendSiteTitle } from '../components/skeleton'
-
 import { Container, Section, Article } from '../components/designSystem/layout'
+import Metadata from '../components/Metadata'
 
 const Apropos = function () {
   return (
-    <Skeleton>
-      <Head>
-        <title>{`À propos ${appendSiteTitle}`}</title>
-      </Head>
+    <>
+      <Metadata title={`À propos`} />
       <Container className="bg-gradient-to-b from-transparent to-orange-200">
         <Article>
           <Section>
@@ -29,7 +25,7 @@ const Apropos = function () {
           </Section>
         </Article>
       </Container>
-    </Skeleton>
+    </>
   )
 }
 
