@@ -9,19 +9,9 @@ const Quality = function () {
         <div>
           <h4>Qualité web</h4>
           <p>
-            Tout développeur web devrait se pencher sur la certification Opquast, Maîtrise de la qualité en projet Web ;
-            En juillet 2020,{' '}
-            <a
-              href="https://directory.opquast.com/fr/certificat/CFMXPT/"
-              title="Certification Opquast Pasquiou Richard"
-            >
-              j'ai obtenu le niveau avancé
-            </a>
-            . Si vous ne l'avez pas encore passée, allez-y… Vraiment.
+            J'ai trouvé des règles de base simples à appliquer dans la <a className='no-underline' href="https://www.opquast.com/certification/">certification Opquast, Maîtrise de la qualité en projet Web</a> ; si vous ne l'avez pas encore passée, allez-y… Vraiment.
           </p>
-          <p>Tant qu'à développer, autant que ce soit valable pour tous en rendant accessible les sites.</p>
-          <p>
-            J'ai donc passé la formation "Développer des sites web accessibles" d'Access42. Certification obtenue avec
+          <p>Autant que je le peux, j'essaie de développer pour que ce soit lisible par tous. La formation <a className='no-underline' href='https://formations.access42.net/formations/developper-et-coder-des-sites-accessibles/' >Développer des sites web accessibles</a> d'Access42 m'a aidé à travailler dans ce sens. Certification obtenue avec
             une réussite de 72,5 %.
             <br />
             <small>
@@ -30,7 +20,12 @@ const Quality = function () {
             </small>
           </p>
         </div>
+        <a
+              href="https://directory.opquast.com/fr/certificat/CFMXPT/"
+              title="Certification Opquast Pasquiou Richard"
+            >
         <Img width="200" height="200" alt="badge Opquast avancé" src="/images/OpquastBadge.svg" />
+        </a>
       </div>
     </Section>
   )

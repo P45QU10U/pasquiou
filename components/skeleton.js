@@ -13,10 +13,6 @@ const Skeleton = function ({ children }) {
     <>
       <SkipNavLink>passer au contenu</SkipNavLink>
       <div className="relative carbon font-mono">
-        <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="description" content="Richard Pasquiou, développeur web front-end" />
-        </Head>
         <Header />
         <SkipNavContent style={{ scrollMarginTop: '12rem' }}>
           <main role="main">{children}</main>
