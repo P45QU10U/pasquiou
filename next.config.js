@@ -1,8 +1,9 @@
 module.exports = {
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      // require('./utils/generateSiteMap')
-    }
-    return config
-  },
+  experimental:{appDir: true},
+  // webpack: (config, { isServer }) => {
+  //   if (isServer) {
+  //     require('./utils/generateSiteMap')
+  //   }
+  //   return config
+  // },
 }

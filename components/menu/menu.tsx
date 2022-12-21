@@ -1,22 +1,10 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import MenuLi from './MenuLi'
 import SvgMenuIcon from './SvgMenuIcon'
-
-export const menuItems = [
-  {
-    title: 'Accueil',
-    slug: '/',
-  },
-  // {
-  //   title: 'Blog',
-  //   slug: '/blog',
-  // },
-  {
-    title: 'A propos',
-    slug: '/a-propos',
-  },
-]
+import { menuItems } from '../../utils/menuitems'
 
 const Menu = function () {
   const [toggle, setToggle] = React.useState(false)

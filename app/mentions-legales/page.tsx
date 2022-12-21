@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Skeleton, { appendSiteTitle } from '../components/skeleton'
-import { Article } from '../components/designSystem/layout'
+import { Article } from '../../components/designSystem/layout'
+import { appendSiteTitle } from '../../utils/misc'
 
-const Mentionslegales = function () {
+const Mentionslegales = () => {
   return (
-    <Skeleton>
+    <>
       <Head>
         <title>{`Mentions légales ${appendSiteTitle}`}</title>
       </Head>
@@ -25,7 +25,7 @@ const Mentionslegales = function () {
           États-unis
         </address>
       </Article>
-    </Skeleton>
+    </>
   )
 }
 

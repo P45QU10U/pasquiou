@@ -6,7 +6,7 @@ import { Section } from '../designSystem/layout'
 const Base = function () {
   return (
     <Section>
-      <div className="bg-orange-200 bg-opacity-60 border-t-4 border-orange-300 rounded-sm p-8">
+      <div className="bg-orange-200 bg-opacity-60 border-t-4 border-orange-300 rounded-sm p-8 mb-8">
         <div className="flex gap-3 mb-4">
           <Bubble bgColor="bg-orange-500" textColor="text-white">
             <FaHtml5 size="32" title="HTML5" />

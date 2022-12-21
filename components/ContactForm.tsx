@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { client } from '../utils/client'
 
 export const ContactForm = function () {
   const [status, setStatus] = useState({
@@ -11,7 +10,7 @@ export const ContactForm = function () {
     email: '',
     message: '',
   })
-  const handleServerResponse = (ok, msg) => {
+  const handleServerResponse = (ok: boolean, msg: string) => {
     if (ok) {
       setStatus({
         submitted: true,
@@ -23,6 +22,7 @@ export const ContactForm = function () {
         message: '',
       })
     } else {
+      // @ts-ignore
       setStatus({
         info: { error: true, msg },
       })
@@ -41,14 +41,15 @@ export const ContactForm = function () {
     })
   }, [])
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async(e) => {
     e.preventDefault()
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
-    client('https://formspree.io/f/moqpyjwv', {
+    await fetch('https://formspree.io/f/moqpyjwv', {
       method: 'POST',
-      data: inputs,
+      // @ts-ignore
+      body: inputs,
     })
-      .then((response) => {
+      .then(() => {
         handleServerResponse(true, 'Merci, votre message a été transmis.')
       })
       .catch((error) => {

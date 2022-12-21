@@ -5,7 +5,7 @@ import { Section } from '../designSystem/layout'
 const Frameworks = function () {
   return (
     <Section>
-      <div className="bg-red-200 bg-opacity-60 border-t-4 border-red-300 rounded-sm p-8">
+      <div className="bg-red-200 bg-opacity-60 border-t-4 border-red-300 rounded-sm p-8 mb-8">
         <div className=" flex gap-3 mb-4">
           <Bubble bgColor="bg-black" textColor="text-cyan-400">
             <SiReact size="32" title="React" />

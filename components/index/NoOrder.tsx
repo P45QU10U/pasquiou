@@ -3,7 +3,7 @@ import { Section } from '../designSystem/layout'
 const Frameworks = function () {
   return (
     <Section className="relative z-10 grid grid-cols-1">
-      <div className="w-full -ml-full rounded-3xl shadow-lg bg-gradient-to-br from-orange-400 to-pink-500 transform -rotate-1 sm:-rotate-2 mb-4">
+      <div className="w-full -ml-full rounded-3xl shadow-lg bg-gradient-to-br from-orange-400 to-pink-500 transform -rotate-1 sm:-rotate-2 mb-8">
         <div className="p-6">
           <h4>En vrac</h4>
           <p>J'ai fait peu de tests, mais je sais utiliser Jest, avec pour complément la React Testing Library.</p>

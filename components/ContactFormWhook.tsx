@@ -1,3 +1,5 @@
+'use client'
+
 import { useForm, ValidationError } from '@formspree/react'
 import { Button } from './designSystem/Buttons'
 
@@ -10,6 +12,7 @@ const ContactFormWhook = function () {
         return document.title
       },
     },
+    // @ts-ignore
     errors: [
       {
         field: 'email',
@@ -24,10 +27,9 @@ const ContactFormWhook = function () {
     ],
   })
 
-  console.log(state)
-
   return (<>
     {(state.succeeded) && <p role={'alert'} className='bg-yellow-300 p-4 mb-4'>
+    {/* @ts-ignore */}
       <span role={'img'} alt="">🚀</span>{' '}
       Merci pour votre message. Je reviens vers vous au plus vite.
       </p>}
@@ -51,6 +53,7 @@ const ContactFormWhook = function () {
           className="bg-gray-200 mt-2 focus:ring-2 focus:ring-blue-400" />
       </label>
       <ValidationError prefix="Message" field="message" errors={state.errors} />
+      {/* @ts-ignore */}
       <Button type="submit" purpose="primary" size="lg" disabled={state.submitting}>
         Envoyer
       </Button>

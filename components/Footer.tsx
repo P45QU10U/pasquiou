@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { SiTwitter } from 'react-icons/si'
 import { Container, Section } from './designSystem/layout'
-import { menuItems } from './menu/menu'
+import { menuItems } from '../utils/menuitems'
+
 
 const Footer = function () {
   return (

@@ -5,7 +5,7 @@ import { Section } from '../designSystem/layout'
 const Backend = function () {
   return (
     <Section>
-      <div className="bg-green-200 bg-opacity-60 border-t-4 border-green-300 rounded-sm p-8">
+      <div className="bg-green-200 bg-opacity-60 border-t-4 border-green-300 rounded-sm p-8 mb-8">
         <div className="flex gap-3 mb-4">
           <Bubble bgColor="bg-blue-300" textColor="text-black">
             <SiPhp size="32" title="PHP 7" />

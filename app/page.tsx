@@ -1,6 +1,4 @@
 import React from 'react'
-import Skeleton, { appendSiteTitle } from '../components/skeleton'
-
 import { Container, Section } from '../components/designSystem/layout'
 import Base from '../components/index/Base'
 import Backend from '../components/index/Backend'
@@ -10,7 +8,7 @@ import Frameworks from '../components/index/Frameworks'
 import ContactFormWhook from '../components/ContactFormWhook'
 import Metadata from '../components/Metadata'
 
-const Home = function () {
+const Home = () => {
   return (
     <>
       <Metadata title={`Accueil`} />

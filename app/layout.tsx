@@ -1,16 +1,21 @@
-import Head from 'next/head'
-
+import React from 'react'
+import '../styles/globals.css'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
 
-import Header from './Header'
-import Footer from './Footer'
 
-export const appendSiteTitle = ' - Richard Pasquiou'
-
-const Skeleton = function ({ children }) {
+export default function RootLayout({ children }: {
+  children: React.ReactNode;
+}) {
   return (
-    <>
+    <html lang="fr">
+      <head>
+        <title>Next.js</title>
+      </head>
+      <body>
+      
       <SkipNavLink>passer au contenu</SkipNavLink>
       <div className="relative carbon font-mono">
         <Header />
@@ -19,8 +24,9 @@ const Skeleton = function ({ children }) {
         </SkipNavContent>
         <Footer />
       </div>
-    </>
-  )
+    
+      </body>
+    </html>
+  );
 }
 
-export default Skeleton

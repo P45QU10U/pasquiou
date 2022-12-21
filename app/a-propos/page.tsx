@@ -1,7 +1,7 @@
-import { Container, Section, Article } from '../components/designSystem/layout'
-import Metadata from '../components/Metadata'
+import { Container, Section, Article } from '../../components/designSystem/layout'
+import Metadata from '../../components/Metadata'
 
-const Apropos = function () {
+const Apropos = () => {
   return (
     <>
       <Metadata title={`À propos`} />

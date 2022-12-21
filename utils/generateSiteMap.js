@@ -1,7 +1,5 @@
-import globby from 'globby'
-
 const fs = require('fs')
-// const globby = require('globby')
+const globby = require('globby')
 
 const prettier = require('prettier')
 
@@ -9,17 +7,16 @@ const domain = 'pasquiou.fr'
 
 async function generateSiteMap() {
   const pages = await globby([
-    'pages/**/*.js',
-    '!pages/_*.js', // On évince avec un bang !
-    '!pages/**/[id].js',
-    '!pages/api',
+    'app/page.tsx',
+    'app/**/page.tsx',
+    // '!pages/_*.js', // On évince avec un bang !
   ])
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${pages
       .map((page) => {
-        const path = page.replace('pages', '').replace('.js', '').replace('.md', '')
+        const path = page.replace('app', '').replace('.js', '').replace('.md', '')
         const route = path === '/index' ? '' : path
 
         return `<url>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from "next/head"
-import { appendSiteTitle } from '../components/skeleton'
+import { appendSiteTitle } from '../utils/misc'
 
 const Metadata = ({title = 'Welcome'}) => {
   return (

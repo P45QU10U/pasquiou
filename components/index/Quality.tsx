@@ -5,7 +5,7 @@ import { Section } from '../designSystem/layout'
 const Quality = function () {
   return (
     <Section>
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-2 place-items-center bg-indigo-300 bg-opacity-60  border-t-4 border-indigo-400 rounded-sm p-8">
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-2 place-items-center bg-indigo-300 bg-opacity-60  border-t-4 border-indigo-400 rounded-sm p-8 mb-8">
         <div>
           <h4>Qualité web</h4>
           <p>
