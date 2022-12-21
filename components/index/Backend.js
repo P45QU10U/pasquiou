@@ -17,7 +17,7 @@ const Backend = function () {
             <SiGraphql size="32" title="GraphQL" />
           </Bubble>
         </div>
-        <h4>Back</h4>
+        <h3>Back</h3>
         <p>
           Côté arrière-guichet, <strong>PHP</strong> m'a accompagné jusqu'à la version 7. C'est le langage avec lequel j'ai le plus joué (avec CodeIgniter).
           Aujourd'hui, j'utilise <strong>Node</strong> à l'aide d'Express. Côté BDD, j'aime

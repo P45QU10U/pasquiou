@@ -33,8 +33,8 @@ const Menu = function () {
       <div className="grid grid-cols-6 grid-rows-1 p-4">
         <div className="flex col-span-5 md:col-span-1 text-left">
           <Link href={'/'} >
-          <a className="cursor-pointer">
-          <Image width={'100'} height={'100'} src={'/images/perfpage.svg'} />
+          <a className="cursor-pointer" title='Accueil'>
+          <Image alt='Logo Pasquiou' width={'100'} height={'100'} src={'/images/perfpage.svg'} />
           </a>
           </Link>
         </div>

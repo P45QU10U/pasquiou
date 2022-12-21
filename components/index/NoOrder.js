@@ -5,7 +5,7 @@ const Frameworks = function () {
     <Section className="relative z-10 grid grid-cols-1">
       <div className="w-full -ml-full rounded-3xl shadow-lg bg-gradient-to-br from-orange-400 to-pink-500 transform -rotate-1 sm:-rotate-2 mb-4">
         <div className="p-6">
-          <h4>En vrac</h4>
+          <h3>En vrac</h3>
           <p>J'ai fait peu de tests, mais je sais utiliser Jest, avec pour complément la React Testing Library.</p>
           <p>
             Côté législation, j'ai décortiqué le{' '}

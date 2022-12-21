@@ -17,7 +17,7 @@ const Frameworks = function () {
             <SiTailwindcss size="32" title="Tailwind CSS" />
           </Bubble>
         </div>
-        <h4>Mes coups de c&oelig;ur</h4>
+        <h3>Mes coups de c&oelig;ur</h3>
         <p>
           J'apprécie particulièrement <strong>React</strong> 💗 et son écosystème, <strong>Git</strong>, et enfin <strong>TailwindCSS</strong> qui est diablement efficace (ça peut être sale, mais comme tout code). Je ne suis pas designer ; je prends beaucoup de plaisir à transformer les maquettes pour honorer le travail de ceux qui le sont.
         </p>
