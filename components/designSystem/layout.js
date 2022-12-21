@@ -12,7 +12,7 @@ const Section = function ({ className = '', children }) {
 const Article = function ({ children }) {
   return (
     <Section>
-      <article className="bg-gray-100 p-8 mb-8">{children}</article>
+      <article className="mb-8">{children}</article>
     </Section>
   )
 }

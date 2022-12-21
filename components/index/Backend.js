@@ -19,8 +19,8 @@ const Backend = function () {
         </div>
         <h4>Back</h4>
         <p>
-          Côté arrière-guichet, <strong>PHP</strong> est le langage avec lequel j'ai le plus joué (avec CodeIgniter).
-          Dernièrement, je m'intéresse de plus en plus à <strong>Node</strong> à l'aide d'Express. Côté BDD, j'aime
+          Côté arrière-guichet, <strong>PHP</strong> m'a accompagné jusqu'à la version 7. C'est le langage avec lequel j'ai le plus joué (avec CodeIgniter).
+          Aujourd'hui, j'utilise <strong>Node</strong> à l'aide d'Express. Côté BDD, j'aime
           requêter avec SQL. <strong>MySQL</strong>, MSSQL. Je me suis essayé à quelques requêtes{' '}
           <strong>GraphQL</strong> et MongoDB.
         </p>

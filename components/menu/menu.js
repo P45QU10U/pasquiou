@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import MenuLi from './MenuLi'
 import SvgMenuIcon from './SvgMenuIcon'
 
@@ -30,9 +31,13 @@ const Menu = function () {
   return (
     <div className="w-full">
       <div className="grid grid-cols-6 grid-rows-1 p-4">
-        <h1 className="flex col-span-5 md:col-span-1 text-left text-4xl">
-          <Link href="/">R.P.</Link>
-        </h1>
+        <div className="flex col-span-5 md:col-span-1 text-left">
+          <Link href={'/'} >
+          <a className="cursor-pointer">
+          <Image width={'100'} height={'100'} src={'/images/perfpage.svg'} />
+          </a>
+          </Link>
+        </div>
         <button
           className="col-end-auto grid justify-items-end items-center md:hidden text-orange-600"
           type="button"

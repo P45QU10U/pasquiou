@@ -6,8 +6,8 @@ import { menuItems } from './menu/menu'
 const Footer = function () {
   return (
     <footer role="contentinfo">
-      <Container className="bg-gray-50 bg-opacity-80">
-        <Section className="grid grid-cols-1 grid-rows-2 md:grid-cols-3 p-4">
+      <Container className="pt-6 bg-cyan-50 bg-opacity-80">
+        <Section className="grid grid-cols-1 gap-x-6 grid-rows-2 md:grid-cols-3 p-4">
           <div className="mb-4">
             <h4>Coordonnées</h4>
             <p>

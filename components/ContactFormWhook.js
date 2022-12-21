@@ -24,13 +24,12 @@ const ContactFormWhook = function () {
     ],
   })
 
-  console.log(state)
-
   return (<>
-    {(state.succeeded) && <p role={'alert'} className='bg-yellow-300 p-4 mb-4'>
+    {(state.succeeded) ? <p role={'alert'} className='bg-yellow-300 p-4 mb-4'>
       <span role={'img'} alt="">🚀</span>{' '}
       Merci pour votre message. Je reviens vers vous au plus vite.
-      </p>}
+      </p>
+    :  
     <form onSubmit={handleSubmit} className="grid enveloppevintage">
       <label htmlFor="email" className="flex flex-col pb-4">
         Votre e-mail (requis)
@@ -55,6 +54,7 @@ const ContactFormWhook = function () {
         Envoyer
       </Button>
     </form>
+      }
     </>
   )
 }

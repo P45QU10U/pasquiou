@@ -12,11 +12,11 @@ const Frameworks = function () {
             <abbr title="Réglement Général pour la Protection des Données">RGPD</abbr>.
           </p>
           <p>Enfin, je suis très intéressé par tout ce qui est création de sites statiques ; NextJS est génial.</p>
-          <p>Prochainement, je compte me former à TypeScript. Je n'en connais que les rudiments.</p>
-          <code>\// @ts-check</code>
+          <p>TypeScript, je pratique, mais une bonne formation ne serait pas de refus.</p>
+          <code>// @ts-check</code>
           <blockquote>
             Je ne suis pas le mouton à 5 pattes. Je suis investi, et m'efforce de délivrer un code concis. Pour moi, ou
-            les suivants…
+            ceux qui me reliront…
           </blockquote>
         </div>
       </div>

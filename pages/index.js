@@ -1,5 +1,4 @@
 import React from 'react'
-import Skeleton, { appendSiteTitle } from '../components/skeleton'
 
 import { Container, Section } from '../components/designSystem/layout'
 import Base from '../components/index/Base'
@@ -15,17 +14,17 @@ const Home = function () {
     <>
       <Metadata title={`Accueil`} />
       <Container>
-        <Section className="grid grid-cols-1 gap-2 grid-rows-3 grid-flow-col">
-          <h2 className="text-transparent bg-gradient-to-br bg-clip-text from-black to-orange-500">
-            Développeur web <span className="inline-block">front-end</span>
-          </h2>
-          <h3>
-            <span role="img" aria-label="Salut">
+        <Section className="grid">
+          <h1 className='text-4xl mb-6'>
+            {/* <span role="img" aria-label="Salut">
               👋🏼
-            </span>{' '}
-            Je m'appelle Richard Pasquiou
-          </h3>
-          <p>développeur web depuis 2010</p>
+            </span>{' '} */}
+            Richard <span className='text-orange-700'>P</span>asquiou
+          </h1>
+          <h2 className="text-2xl mb-6">
+            Développeur web <span className="inline-block text-transparent bg-gradient-to-br bg-clip-text from-orange-800 to-orange-500">front-end</span> <span className='text-sm'>depuis 2010</span>
+          </h2>
+          
         </Section>
 
         <Base />

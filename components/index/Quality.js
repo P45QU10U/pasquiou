@@ -9,9 +9,10 @@ const Quality = function () {
         <div>
           <h4>Qualité web</h4>
           <p>
-            J'ai trouvé des règles de base simples à appliquer dans la <a className='no-underline' href="https://www.opquast.com/certification/">certification Opquast, Maîtrise de la qualité en projet Web</a> ; si vous ne l'avez pas encore passée, allez-y… Vraiment.
+            J'ai trouvé chez Opquast des <a href="https://checklists.opquast.com/fr/">règles simples</a> à appliquer pour tendre vers la qualité. J'ai d'ailleurs passé leur certification,{' '}
+            <a href="https://www.opquast.com/certification/">Maîtrise de la qualité en projet Web</a> ; très enrichissante.
           </p>
-          <p>Autant que je le peux, j'essaie de développer pour que ce soit lisible par tous. La formation <a className='no-underline' href='https://formations.access42.net/formations/developper-et-coder-des-sites-accessibles/' >Développer des sites web accessibles</a> d'Access42 m'a aidé à travailler dans ce sens. Certification obtenue avec
+          <p>Autant que je le peux, j'essaie de développer pour que ce soit lisible par tous. La formation <a href='https://formations.access42.net/formations/developper-et-coder-des-sites-accessibles/' >Développer des sites web accessibles</a> d'Access42 m'a aidé à travailler dans ce sens. Certification obtenue avec
             une réussite de 72,5 %.
             <br />
             <small>

@@ -19,7 +19,7 @@ const Frameworks = function () {
         </div>
         <h4>Mes coups de c&oelig;ur</h4>
         <p>
-          J'apprécie particulièrement <strong>React</strong> 💗, <strong>Git</strong>, et enfin <strong>TailwindCSS</strong> qui est diablement efficace (si, si, essayez même si ça a l'air sale mais que comme tout code ça peut le devenir !). Comme vous pouvez le constater, je ne suis pas designer ; cependant, je prends beaucoup de plaisir à transformer des maquettes en sites web.
+          J'apprécie particulièrement <strong>React</strong> 💗 et son écosystème, <strong>Git</strong>, et enfin <strong>TailwindCSS</strong> qui est diablement efficace (ça peut être sale, mais comme tout code). Je ne suis pas designer ; je prends beaucoup de plaisir à transformer les maquettes pour honorer le travail de ceux qui le sont.
         </p>
       </div>
     </Section>
