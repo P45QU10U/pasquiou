@@ -18,7 +18,7 @@ const Base = function () {
             <SiJavascript size="28" title="JavaScript" />
           </Bubble>
         </div>
-        <h4>Front</h4>
+        <h3>Front</h3>
         <p className="">
           <strong>HTML</strong>, <strong>CSS</strong> font partie du socle indispensable. À mes débuts, je regardais{' '}
           <strong>JavaScript</strong> de loin, aujourd'hui, c'est le langage que j'utilise le plus souvent.

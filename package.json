@@ -27,6 +27,7 @@
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^13.4.0",
@@ -36,7 +37,7 @@
     "eslint": "^8.4.0",
     "eslint-config-airbnb": "^19.0.2",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-config-wesbos": "^3.0.2",
+    "eslint-config-wesbos": "3.1.4",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
