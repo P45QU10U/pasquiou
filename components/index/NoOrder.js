@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Section } from '../designSystem/layout'
 
 const Frameworks = function () {
@@ -12,8 +13,10 @@ const Frameworks = function () {
             <abbr title="Réglement Général pour la Protection des Données">RGPD</abbr>.
           </p>
           <p>Enfin, je suis très intéressé par tout ce qui est création de sites statiques ; NextJS est génial.</p>
-          <p>TypeScript, je pratique, je me forme.</p>
           <code>// @ts-check</code>
+          <p>TypeScript, je pratique, je me forme.</p>
+          <h4>Side project ?</h4>
+          <p>Un petit projet pour un membre de la famille, un site vitrine pour un garage mobile, <a href='https://kaardimobil.vercel.app'>Homecano</a>, basé sur Next.js</p>
           <blockquote>
             Je ne suis pas le mouton à 5 pattes. Je suis investi, et m'efforce de délivrer un code concis. Pour moi, ou
             ceux qui me reliront…
